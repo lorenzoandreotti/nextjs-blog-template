@@ -10,13 +10,23 @@ const Contacts = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   const onSubmit = (data) => {
     //  console.log(data);
     submitting = true;
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(),
+      body: encode({ "form-name": "contact-form", ...data }),
     })
       .then(() => console.log("Form successfully submitted"))
       .catch((error) => alert(error));
@@ -36,7 +46,7 @@ const Contacts = () => {
           method="post"
           className="mx-auto flex w-screen max-w-md flex-col space-y-4"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="contact" value="contact" />
           <div className="flex flex-col space-y-2">
             <label htmlFor="name">Name</label>
             <input
