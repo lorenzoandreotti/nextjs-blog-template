@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import { getAllPostsSlug, getPostBySlug } from "../../lib/query";
 import { sanityClient } from "../../lib/sanity.server";
 
-const Posts = ({ post }) => {
+const Post = ({ post }) => {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
@@ -36,7 +36,7 @@ const Posts = ({ post }) => {
   );
 };
 
-export default Posts;
+export default Post;
 
 export const getStaticPaths = async () => {
   const query = getAllPostsSlug;

@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import { getAllPosts } from "../lib/query";
 import { sanityClient } from "../lib/sanity.server";
 
-export default function Home({ posts }) {
+const Home = ({ posts }) => {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
@@ -40,7 +40,9 @@ export default function Home({ posts }) {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;
 
 export const getServerSideProps = async () => {
   const query = getAllPosts;
