@@ -46,7 +46,7 @@ const Contacts = () => {
           method="post"
           className="mx-auto flex w-screen max-w-md flex-col space-y-4"
         >
-          <input type="hidden" name="contact" value="contact" />
+          <input type="hidden" name="form-name" value="contact" />
           <div className="flex flex-col space-y-2">
             <label htmlFor="name">Name</label>
             <input
