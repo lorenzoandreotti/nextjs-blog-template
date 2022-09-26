@@ -45,11 +45,19 @@ const Contact = () => {
           <form
             name="contact-form"
             method="POST"
+            netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
             data-netlify="true"
             onSubmit={handleSubmit(onSubmit)}
             className="mx-auto flex w-screen max-w-md flex-col space-y-4"
           >
             <input type="hidden" name="form-name" value="contact-form" />
+            <p className="hidden">
+              <label>
+                Do not fill this out if you are human:{" "}
+                <input name="bot-field" />
+              </label>
+            </p>
             <div className="flex flex-col space-y-2">
               <label htmlFor="name">Name</label>
               <input
