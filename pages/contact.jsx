@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 let submitting = false;
 
-const Contacts = () => {
+const Contact = () => {
   const {
     register,
     handleSubmit,
@@ -38,15 +38,15 @@ const Contacts = () => {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex flex-grow flex-col space-y-4 px-4">
-        <h1 className="text-5xl font-bold text-green-500">Contacts</h1>
+        <h1 className="text-5xl font-bold text-green-500">Contact</h1>
         <form
-          name="contacts"
+          name="contact"
           data-netlify="true"
           onSubmit={handleSubmit(onSubmit)}
           method="post"
           className="mx-auto flex w-screen max-w-md flex-col space-y-4"
         >
-          <input type="hidden" name="form-name" value="contacts" />
+          <input type="hidden" name="form-name" value="contact" />
           <div className="flex flex-col space-y-2">
             <label htmlFor="name">Name</label>
             <input
@@ -151,4 +151,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Contact;
