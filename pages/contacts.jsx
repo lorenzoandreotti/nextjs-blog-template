@@ -20,10 +20,10 @@ const Contacts = () => {
   };
 
   const onSubmit = (data) => {
-    //  console.log(data);
+    console.log(data);
     submitting = true;
 
-    fetch("/", {
+    fetch("/contacts", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact-form", ...data }),
