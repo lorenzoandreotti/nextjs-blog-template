@@ -26,7 +26,7 @@ const Contacts = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...data }),
+      body: encode({ "form-name": "contact-form", ...data }),
     })
       .then(() => console.log("Form successfully submitted"))
       .catch((error) => alert(error));
@@ -41,10 +41,9 @@ const Contacts = () => {
         <h1 className="text-5xl font-bold text-green-500">Contacts</h1>
         <form
           name="contact"
-          method="post"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit(onSubmit)}
+          method="post"
           className="mx-auto flex w-screen max-w-md flex-col space-y-4"
         >
           <input type="hidden" name="form-name" value="contact" />
