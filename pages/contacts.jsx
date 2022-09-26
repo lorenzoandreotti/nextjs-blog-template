@@ -23,7 +23,7 @@ const Contacts = () => {
     console.log(data);
     submitting = true;
 
-    fetch("/contacts", {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact-form", ...data }),
@@ -40,13 +40,13 @@ const Contacts = () => {
       <main className="flex flex-grow flex-col space-y-4 px-4">
         <h1 className="text-5xl font-bold text-green-500">Contacts</h1>
         <form
-          name="contact"
+          name="contacts"
           data-netlify="true"
           onSubmit={handleSubmit(onSubmit)}
           method="post"
           className="mx-auto flex w-screen max-w-md flex-col space-y-4"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contacts" />
           <div className="flex flex-col space-y-2">
             <label htmlFor="name">Name</label>
             <input
