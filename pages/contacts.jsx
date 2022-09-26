@@ -46,7 +46,6 @@ const Contact = () => {
             name="contact-form"
             method="POST"
             netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true"
             data-netlify="true"
             onSubmit={handleSubmit(onSubmit)}
             className="mx-auto flex w-screen max-w-md flex-col space-y-4"
@@ -127,7 +126,6 @@ const Contact = () => {
                 {errors.terms?.type === "required" && "Terms is required"}
               </span>
             </div>
-            <div data-netlify-recaptcha="true"></div>
             <button
               type="submit"
               className="flex items-center justify-center bg-green-500 px-3 py-2 text-white  focus:border-green-500 focus:outline-none focus:ring-green-500 active:bg-green-600"
