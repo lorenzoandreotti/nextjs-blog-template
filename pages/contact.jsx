@@ -40,13 +40,14 @@ const Contact = () => {
       <main className="flex flex-grow flex-col space-y-4 px-4">
         <h1 className="text-5xl font-bold text-green-500">Contact</h1>
         <form
-          name="contact"
+          name="contact-form"
+          method="POST"
+          action="contact/?success=true"
           data-netlify="true"
           onSubmit={handleSubmit(onSubmit)}
-          method="post"
           className="mx-auto flex w-screen max-w-md flex-col space-y-4"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact-form" />
           <div className="flex flex-col space-y-2">
             <label htmlFor="name">Name</label>
             <input
