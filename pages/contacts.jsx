@@ -24,10 +24,10 @@ const Contact = () => {
   };
 
   const onSubmit = (data) => {
-    fetch("/contact", {
+    fetch("/contacts", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...data }),
+      body: encode({ "form-name": "contact-form", ...data }),
     })
       .then(() => console.log("Success!"))
       .catch((error) => console.log(error));
@@ -43,13 +43,13 @@ const Contact = () => {
         <h1 className="text-5xl font-bold text-green-500">Contact</h1>
         {!submitted && (
           <form
-            name="contact"
+            name="contact-form"
             method="POST"
             data-netlify="true"
             onSubmit={handleSubmit(onSubmit)}
             className="mx-auto flex w-screen max-w-md flex-col space-y-4"
           >
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="contact-form" />
             <div className="flex flex-col space-y-2">
               <label htmlFor="name">Name</label>
               <input
