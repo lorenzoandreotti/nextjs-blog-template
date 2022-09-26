@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import { getAllPosts } from "../../lib/query";
-import { sanityClient } from "../../lib/sanity.server";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import { getAllPosts } from "../lib/query";
+import { sanityClient } from "../lib/sanity.server";
 
 const Posts = ({ posts }) => {
   return (
