@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -6,6 +7,14 @@ import LinkButton from "../components/LinkButton";
 const Components = () => {
   return (
     <div className="flex min-h-screen flex-col">
+      <Head>
+        <title>Components | Next JS blog template</title>
+        <meta
+          name="description"
+          content="Next JS blog template with tailwind CSS and Sanity CMS"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <main className="flex flex-grow flex-col space-y-4 px-4">
         <h1 className="text-5xl font-bold text-primary">Components</h1>

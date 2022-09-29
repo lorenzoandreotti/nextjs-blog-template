@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import Head from "next/head";
 
 const Contacts = () => {
   const emailRegex =
@@ -37,6 +38,14 @@ const Contacts = () => {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <Head>
+        <title>Contacts | Next JS blog template</title>
+        <meta
+          name="description"
+          content="Next JS blog template with tailwind CSS and Sanity CMS"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <main className="flex flex-grow flex-col space-y-4 px-4">
         <h1 className="text-5xl font-bold text-primary">Contacts</h1>

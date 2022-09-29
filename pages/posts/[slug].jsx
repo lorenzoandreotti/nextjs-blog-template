@@ -22,7 +22,7 @@ const Post = ({ post }) => {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
-        <title>Post | Next JS blog template</title>
+        <title>{post?.title ?? "Post"} | Next JS blog template</title>
         <meta
           name="description"
           content="Next JS blog template with tailwind CSS and Sanity CMS"
