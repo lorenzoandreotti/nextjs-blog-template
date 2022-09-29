@@ -2,8 +2,21 @@ import { PortableText } from "@portabletext/react";
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { getAllPostsSlug, getPostBySlug } from "../../lib/query";
+import { getAllPostsSlug, getPostBySlug } from "../../utils/query";
 import { sanityClient } from "../../lib/sanity.server";
+import { urlFor } from "../../lib/sanity";
+
+const postComponents = {
+  types: {
+    image: ({ value }) => (
+      <img
+        className="mx-auto my-8 max-h-screen rounded-lg"
+        alt={value.alt || " "}
+        src={urlFor(value)}
+      />
+    ),
+  },
+};
 
 const Post = ({ post }) => {
   return (
@@ -20,13 +33,13 @@ const Post = ({ post }) => {
       <Header />
 
       <main className="flex flex-grow flex-col space-y-4 px-4">
-        <article>
-          <h1 className="text-5xl font-bold text-green-500">{post?.title}</h1>
-          <span className="text-sm italic text-gray-500">
-            {new Date(post?.publishedAt).toLocaleDateString("it-IT")}
-          </span>
+        <h1 className="text-5xl font-bold text-primary">{post?.title}</h1>
+        <span className="text-sm italic text-secondary">
+          {new Date(post?.publishedAt).toLocaleDateString("it-IT")}
+        </span>
+        <article className="prose mx-auto">
           <div>
-            <PortableText value={post?.body} />
+            <PortableText value={post?.body} components={postComponents} />
           </div>
         </article>
       </main>

@@ -10,13 +10,13 @@ const Header = () => {
       <nav>
         <ul className="flex flex-row items-center justify-between space-x-4">
           <li>
-            <Link href="/posts">
-              <a>Posts</a>
+            <Link href="/about">
+              <a>About</a>
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <a>About</a>
+            <Link href="/components">
+              <a>Components</a>
             </Link>
           </li>
           <li>
